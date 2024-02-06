@@ -1,0 +1,40 @@
+---
+import MyLayout from "../layouts/MyLayout.astro";
+import CardStroty from "./childComponent/cardStroty.astro";
+const stroy = [
+    {
+        title: "Pertama bertemu",
+        location: "Cikole",
+        date: "10 Agustus 2020",
+        img: "/src/img/story1.jpg"
+    },
+    {
+        title: "Menyatakan Cinta",
+        location: "Pantai Anyer",
+        date: "10 November 2020",
+        img: "/src/img/story2.jpg"
+    },
+    {
+        title: "Tunangan",
+        location: "Rumah Heni",
+        date: "20 Februari 2024",
+        img: "/src/img/story3.png"
+    }
+]
+
+const {name} = Astro.props
+---
+
+<MyLayout>
+    <div id={name} class="flex w-full flex-col my-10 z-[10] justify-center items-center">
+        <h1 class="font-great text-3xl text-sky-800 font-bold md:text-5xl">Cerita Cinta</h1>
+        <p class="text-sm md:text-lg w-full md:px-10 px-16 md:w-1/2 text-center font-semibold lg:font-normal">Banyak cerita yang kami lalui sehingga akhirnya kami bisa bersatu, cerita yang akan kami kenang selalu, dan cerita itu kami bagi untuk anda.</p>
+        <div class="flex flex-col mx-auto gap-4 mt-20">
+            {
+                stroy.map((item) => (
+                    <CardStroty title={item.title} location={item.location} date={item.date} img={item.img}/>     
+                ))
+            }
+        </div>
+    </div>
+</MyLayout>

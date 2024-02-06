@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {BackgroundImage} from 'astro-imagetools/components';
+import {Footer,Gallery,Gift,Hero,Location,Navigation,Profile,Story,Ucapan,UndanganAcara,Video} from '../components'
+import { navList } from '../components/content';
+---
+
+<Layout title="Website Undangan">
+<Navigation/>
+	<BackgroundImage
+	placeholder="blurred"
+	src="/src/img/img1.jpg"
+	backgroundSize="cover"
+	backgroundPosition="50% 50%"
+	
+	>
+	<span class="block w-full h-full bg-slate-800 bg-opacity-50 ">
+		<Hero name="home"/>
+		
+	</span>
+</BackgroundImage>
+<Profile name="profile"/>
+<UndanganAcara name="acara"/>
+<Location name="lokasi"/>
+<Gallery name="gallery"/>
+<Video />
+<Story name="cerita"/>
+<Gift name="gift"/>
+<Ucapan name="ucapan"/>
+<Footer />
+</Layout>
+

@@ -1,0 +1,32 @@
+---
+import MyLayout from "../layouts/MyLayout.astro"
+import g1 from "../img/gallery/gambar1.jpg"
+import g2 from "../img/gallery/gambar2.jpg"
+import g3 from "../img/gallery/gambar3.jpg"
+import g4 from "../img/gallery/gambar4.jpg"
+import g5 from "../img/gallery/gambar5.jpg"
+import { Image } from "astro:assets"
+
+const gallery = [
+    g1,g2,g3,g4,g5
+]
+
+
+const {name} = Astro.props
+---
+
+<MyLayout>
+    <div id={name} class="w-full flex flex-col justify-center items-center py-10 px-5">
+        <h1 class="text-3xl text-sky-800 font-great font-bold md:text-5xl">Gallery</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 mt-10 md:grid-cols-3 gap-4 p-5 mx-auto">
+            {
+                gallery.map((item) => (
+                    <div class="rounded drop-shadow-xl overflow-hidden">
+                        <Image  height={400} src={item} alt="gallery" class="hover:scale-125 transition duration-300" />
+                    </div>
+                ))
+            }
+        </div>
+        </div>
+</MyLayout>
+

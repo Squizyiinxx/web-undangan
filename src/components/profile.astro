@@ -1,0 +1,17 @@
+---
+import ComponentProfile from '../components/childComponent/componentProfile.astro'
+import MyLayout from '../layouts/MyLayout.astro'
+const {name} = Astro.props
+---
+<MyLayout>
+    <div id={name} class="w-full px-10 text-center">
+        <h1 class="text-3xl text-sky-800 pt-10 font-great font-bold md:text-5xl">Mempelai</h1>
+        <p class="text-xs md:text-base mt-3 px-5 font-semibold lg:font-normal text-center md:w-1/2 mx-auto md:px-3">Maha suci Allah SWT yang telah menciptakan makhluk-Nya berpasang-pasangan.
+            Ya Allah, perkenankanlah kami merangkai kasih sayang yang Kau ciptakan di antara putra-putri kami:</p>
+            <div class="flex gap-4 w-full flex-col md:flex-row md:w-1/2 text-center mx-auto z-10 px-5 mt-20">
+                <ComponentProfile name="Fauzi" mempelai="pria" image="/src/img/fauzi.jpg" city="Bandung"/>
+                <span class="text-sky-800 text-5xl font-great mt-8 md:mt-28">&</span>
+                <ComponentProfile name="Heni" mempelai="Perempuan" image="/src/img/heni.jpg" city="Serang" />
+            </div>
+        </div>
+</MyLayout>

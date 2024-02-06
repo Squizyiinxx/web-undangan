@@ -1,0 +1,14 @@
+---
+
+---
+<div class="flex flex-col w-full py-10 justify-center items-center bg-slate-300 relative overflow-hidden
+before:absolute before:top-60 md:before:top-100 before:-left-10 before:w-[100px] md:before:w-[200px] before:h-[200px] md:before:h-[500px] before:bg-no-repeat before:bg-cover before:bg-center before:bg-[url('/src/img/asset2.png')]
+after:absolute after:-bottom-[100px] after:right-0 after:w-[100px] md:after:w-[200px] after:h-[200px] md:after:h-[500px] after:bg-no-repeat after:bg-cover after:bg-center after:bg-[url('/src/img/asset3.png')]
+ pb-20">
+    <img src="/src/img/asset2.png" alt="splash" class="absolute md:hidden bottom-72 right-0 h-[200px] transform rotate-180">
+    <img src="/src/img/splash.png" alt="splash" class="absolute top-0 right-10 w-[700px] -z-6 opacity-20">
+    <img src="/src/img/splash2.png" alt="splash" class="absolute -bottom-[200px] left-10 w-[700px] -z-6 opacity-20">
+    <img src="/src/img/asset4.png" alt="bunga" class="absolute -top-14 md:-top-16 h-[200px] -right-[50px] md:-right-[120px] md:h-[300px] -z-6">
+    <slot/>
+
+</div>

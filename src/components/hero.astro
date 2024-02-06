@@ -1,0 +1,55 @@
+---
+const {name} = Astro.props 
+---
+
+<div id={name} class="w-full flex-col mx-auto flex text-center justify-center z-10 p-10 h-screen items-center">
+    <h1 class="text-3xl mb-5 font-Dancing text-yellow-300 font-bold md:text-5xl">Fauzi & Heni</h1>
+    <p class="text-sm mb-3 text-slate-200 md:text-base">We Are Getting Merried</p>
+    <span class="text-sm text-yellow-300 font-great md:text-2xl ">Minggu, 22 Februari 2024</span>
+    <div class="w-full text-center mt-10 flex flex-col justify-center">
+        <h1 class="text-2xl text-slate-200 text-bold font-great md:text-3xl mb-10">Count Down</h1>
+        <div class="flex gap-2 justify-center mt-4 w-full items-center">
+            <div class="flex flex-col items-center border-2 border-yellow-200 px-3 py-5 rounded-lg justify-center">
+                <h3 class="text-slate-200 days md:text-xl"></h3>
+                <p class="text-[10px] md:text-xl text-yellow-200">Hari</p>
+            </div>
+            <div class="flex flex-col border-2 border-yellow-200 px-3 py-5 rounded-lg items-center justify-center">
+                <h3 class="text-slate-200 hours md:text-xl"></h3>
+                <p class="text-[10px] text-yellow-200 md:text-xl">Jam</p>
+            </div>
+            <div class="flex flex-col border-2 border-yellow-200 px-3 py-5 rounded-lg items-center justify-center">
+                <h3 class="text-slate-200 minutes md:text-xl"></h3>
+                <p class="text-[10px] text-yellow-200 md:text-xl">Menit</p>
+            </div>
+            <div class="flex flex-col  border-2 border-yellow-200 px-3 py-5 rounded-lg items-center justify-center">
+                <h3 class="text-slate-200 seconds md:text-xl"></h3>
+                <p class="text-[10px] text-yellow-200 md:text-xl">Detik</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<script>
+    const daysTag: any = document.querySelector(".days");
+    const hoursTag: any = document.querySelector(".hours");
+    const minutesTag: any = document.querySelector(".minutes");
+    const secondsTag: any = document.querySelector(".seconds");
+
+    const targetDate = new Date("2024-02-22");
+    
+    function updateCountdown() {   
+    const now = new Date();
+    const total = targetDate.getTime() - now.getTime();
+    let days = Math.floor(total / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((total % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((total % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((total % (1000 * 60)) / 1000);
+    daysTag.innerHTML = days;
+    hoursTag.innerHTML = hours;
+    minutesTag.innerHTML = minutes;
+    secondsTag.innerHTML = seconds;
+    setInterval(updateCountdown, 1000);
+}
+updateCountdown();
+
+</script>

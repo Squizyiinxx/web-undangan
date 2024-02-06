@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets"
+import {Icon} from 'astro-icon/components'
+
+interface Props {
+    name:string,
+    mempelai : string,
+    city:  string,
+    image:string
+}
+const media = ['facebook', 'twitter', 'instagram']
+
+
+const {
+    name,
+    mempelai,
+    city,
+    image
+} = Astro.props
+---
+
+<div class="flex flex-col justify-center items-center text-center z-[10]">
+    <Image width={100} height={100} class="rounded-full border-2 border-sky-800 w-[150px] md:w-[200px]" src={image} alt={name}/>
+    <h3 class="text-3xl  text-sky-800 mt-5 mb-3 font-great">{name}</h3>
+    <span class="font-bold text-sky-800 mb-3 z-[99]">pengantin {mempelai}</span>
+    <span class="flex mb-3 gap-2 items-center  text-sky-800 justify-center font-bold"><Icon name="mdi:map-marker" class="text-sky-800"/> {city}</span>
+    <div class="flex gap-2 items-center mb-3">
+        {
+            media.map(item =>(
+                <a href="#" class="border-2 border-sky-800 p-1 rounded-full opacity-50 hover:opacity-100 transition duration-300 transform hover:-translate-y-1">
+                    <Icon name={`mdi:${item}`} class="text-sky-800" size={24}/>
+                </a>        
+            ))
+        }
+      
+    </div>
+    <p class="text-slate-900 text-[12px] md:text-base mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste quibusdam, qui numquam maiores dignissimos soluta perspiciatis quod voluptate? Omnis hic possimus, numquam quis veniam illum id assumenda debitis suscipit, dolores totam? Corrupti rerum ipsam laborum veniam, suscipit iure dignissimos ad tempora dolorum sint impedit quibusdam porro voluptatum eius quis consequatur?</p>
+</div>
