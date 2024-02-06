@@ -1,0 +1,19 @@
+---
+import {BackgroundImage} from 'astro-imagetools/components';
+import { Hero } from '.';
+
+---
+<div >
+	<BackgroundImage
+	placeholder="blurred"
+	src="/src/img/img1.jpg"
+	backgroundSize="cover"
+	backgroundPosition="50% 50%"
+	
+	>
+	<span class="flex flex-col w-full h-full bg-slate-800 bg-opacity-50 relative">
+		<Hero name="home"/>
+            
+	</span>
+</BackgroundImage>
+</div>

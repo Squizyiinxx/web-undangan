@@ -9,6 +9,7 @@ import Navigation from "./Navigation.astro";
 import Video from "./video.astro";
 import Gift from "./gift.astro";
 import Footer from "./footer.astro";
+import Heros from "./heros.astro";
 
 export {
     Hero,
@@ -22,4 +23,5 @@ export {
     Video,
     Gift,
     Footer,
+    Heros
 }

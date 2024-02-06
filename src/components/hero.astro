@@ -1,12 +1,13 @@
 ---
-const {name} = Astro.props 
+let {name} = Astro.props 
+
 ---
 
 <div id={name} class="w-full flex-col mx-auto flex text-center justify-center z-10 p-10 h-screen items-center">
     <h1 class="text-3xl mb-5 font-Dancing text-yellow-300 font-bold md:text-5xl">Fauzi & Heni</h1>
     <p class="text-sm mb-3 text-slate-200 md:text-base">We Are Getting Merried</p>
     <span class="text-sm text-yellow-300 font-great md:text-2xl ">Minggu, 22 Februari 2024</span>
-    <div class="w-full text-center mt-10 flex flex-col justify-center">
+    <div class="w-full items-ceneter text-center mt-10 flex flex-col justify-center">
         <h1 class="text-2xl text-slate-200 text-bold font-great md:text-3xl mb-10">Count Down</h1>
         <div class="flex gap-2 justify-center mt-4 w-full items-center">
             <div class="flex flex-col items-center border-2 border-yellow-200 px-3 py-5 rounded-lg justify-center">
@@ -26,6 +27,7 @@ const {name} = Astro.props
                 <p class="text-[10px] text-yellow-200 md:text-xl">Detik</p>
             </div>
         </div>
+       
     </div>
     
 </div>

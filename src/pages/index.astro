@@ -1,24 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {BackgroundImage} from 'astro-imagetools/components';
-import {Footer,Gallery,Gift,Hero,Location,Navigation,Profile,Story,Ucapan,UndanganAcara,Video} from '../components'
-import { navList } from '../components/content';
+import {Footer,Gallery,Gift,Heros,Location,Navigation,Profile,Story,Ucapan,UndanganAcara,Video} from '../components'
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Website Undangan">
 <Navigation/>
-	<BackgroundImage
-	placeholder="blurred"
-	src="/src/img/img1.jpg"
-	backgroundSize="cover"
-	backgroundPosition="50% 50%"
-	
-	>
-	<span class="block w-full h-full bg-slate-800 bg-opacity-50 ">
-		<Hero name="home"/>
-		
-	</span>
-</BackgroundImage>
+<Heros section="hero"/>
 <Profile name="profile"/>
 <UndanganAcara name="acara"/>
 <Location name="lokasi"/>
@@ -27,6 +15,27 @@ import { navList } from '../components/content';
 <Story name="cerita"/>
 <Gift name="gift"/>
 <Ucapan name="ucapan"/>
+<button id="sound" class="fixed bottom-20 left-5 sm:bottom-10 sm:left-10 bg-white shadow-lg p-2 rounded-full z-[100]">
+<Icon name="mdi:play" class="text-sky-800 text-[24px] md:text-[32px]"/>
+</button>
 <Footer />
 </Layout>
+<script>
+	import bgsound from '../components/sound/backsound.mp3'
+	const sound = document.getElementById('sound');
+		const audio = new Audio(bgsound);
+		audio.loop = true;
+		audio.volume = 0.5
+		audio.play()
+		audio.autoplay = true
+		sound.addEventListener('click', () => {
+			if (audio.paused) {
+				audio.play();
+				
+			}else{
+				audio.pause();	
+			}
+		})
+
+</script>
 
