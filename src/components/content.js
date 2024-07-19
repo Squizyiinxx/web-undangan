@@ -22,11 +22,6 @@ const navList = [
     icon: "mdi:insert-photo",
   },
   {
-    name: "cerita",
-    link: "#cerita",
-    icon: "mdi:pencil",
-  },
-  {
     name: "gift",
     link: "#gift",
     icon: "mdi:gift",

@@ -1,28 +1,26 @@
 ---
+import { Image } from "astro:assets"
 import MyLayout from "../layouts/MyLayout.astro"
 import CardUndangan from './childComponent/cardUndangan.astro'
+import bunga1 from "../img/bunga1.png"
 const card = [
     {
         title: "Akad Nikah",
-        time: "Pukul 08.00 - 09.00 WIB",
-        day: "Jum'at 22 Februari 2024",
-        location: "Masjid Agung",
-        locationDetail: "Jl. Babakan Dese No.14d, Kebonwaru, Kec. Batununggal, Kota Bandung, Jawa Barat 40272"
+        time: "Pukul 08.00 WIB - Selesai",
+        day: "Jum'at, 26 Juli 2024",
+        location: "Kediaman Mempelai Wanita",
+        locationDetail: "Kp. Kemeranggen RT 19 Ds. Taman Baru Kec. Taktakan, Kota Serang - Banten",
+        url:"https://maps.app.goo.gl/UP4QkrsLBNgdD3xX9",
     },
     {
         title: "Resepsi",
-        time: "Pukul 09.00 - selesai",
-        day: "Sabtu, 23 Februari 2024",
-        location: "Sopo Sulaksana Building",
-        locationDetail: "Jl. Sekolah Internasional No.52, Cicaheum, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40282"
+        time: "Pukul 19.00 WIB - Selesai",
+        day: "Juma'at Malam Sabtu, 26 Juli 2024",
+        location: "Kediaman Mempelai Wanita",
+        locationDetail: "Kp. Kemeranggen RT 19 Ds. Taman Baru Kec. Taktakan, Kota Serang - Banten",
+        url: "https://maps.app.goo.gl/UP4QkrsLBNgdD3xX9",
     },
-    {
-        title:"Unduh Mantu",
-        time:"Pukul 09.00 - Selesai",
-        day:"Minggu, 24 Februari 2024",
-        location:"Rumah Mempelai Wanita",
-        locationDetail:"Jl. Jend. Sudirman No.413, Jamika, Kec. Bojongloa Kaler, Kota Bandung, Jawa Barat 40231"
-    }
+    
 ]
 
 
@@ -31,13 +29,13 @@ const {name} = Astro.props
 
 <MyLayout>
     <div id={name} class="w-full flex flex-col justify-center items-center py-10 px-5">
-        <img src="/src/img/asset1.png" alt="bunga" class="w-[250px] ">
-        <h1 class="text-3xl text-sky-800 pt-4 font-great mb-3 font-bold md:text-5xl">Undangan & Acara</h1>
-        <p class="text-sm md:text-lg text-center px-10 md:px-3 font-semibold lg:font-normal">Dengan Rahmat Allah yang Maha Kuasa InsyaAllah kami akan melangsungkan pernikahan pada:</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 w-full md:w-3/4 mx-auto px-3 z-20 md:px-20 mt-20 justify-center items-center">
+        <Image src={bunga1} alt="bunga" class="w-[250px]" />
+        <h1 class="text-3xl my-primary-color font-bold pt-4 font-great mb-3 font-bold md:text-5xl">Undangan & Acara</h1>
+        <p class="text-sm md:text-lg text-center px-10 md:px-3 font-bold italic lg:font-normal">Dengan Rahmat Allah yang Maha Kuasa InsyaAllah kami akan melangsungkan pernikahan pada:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 w-full md:w-3/4 mx-auto px-3 z-20 md:px-20 mt-16 justify-center items-center">
             {
                 card.map((item) => (
-                    <CardUndangan title={item.title} time={item.time} day={item.day} location={item.location} locationDetail={item.locationDetail} />
+                    <CardUndangan title={item.title} time={item.time} day={item.day} location={item.location} locationDetail={item.locationDetail} url={item.url}/>
                     ))
                 }
       

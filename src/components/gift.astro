@@ -1,35 +1,44 @@
 ---
-import { Image, imageConfig } from "astro:assets";
+import { Image } from "astro:assets";
 import MyLayout from "../layouts/MyLayout.astro";
 import bca from '../img/bca.png'
+
 import { Icon } from "astro-icon/components";
-import qris from "../img/qris.png";
-import qr from "../img/qr.png";
 const {name} = Astro.props
 ---
 
 <MyLayout>
     <div id={name} class="w-full flex flex-col justify-center items-center py-10 px-5">
-        <h1 class="text-3xl text-sky-800 font-great font-bold md:text-5xl">Kirim Amplop</h1>
-        <p class="text-sm md:text-base lg:font-normal font-semibold text-center md:px-5 px-14 w-full sm:w-3/4 lg:w-1/2 my-5 z-[10]">Amplop ini menjadi tanda kebaikan hati Anda. Terima kasih atas perhatian dan doa yang luar biasa. Semoga Tuhan memberkati setiap langkah hidup Anda.</p>
+        <h1 class="text-3xl my-primary-color font-great font-bold md:text-5xl">Kirim Amplop</h1>
+        <p class="text-sm md:text-base lg:font-normal font-semibold text-center md:px-5 px-14 w-full sm:w-3/4 lg:w-1/2 my-5 z-[10] italic ">Amplop ini menjadi tanda kebaikan hati Anda. Terima kasih atas perhatian dan doa yang luar biasa. Semoga Tuhan memberkati setiap langkah hidup Anda.</p>
         <div class="flex flex-col gap-10 justify-center items-center w-full">
             <div class="flex py-3 px-4 md:p-6 rounded-md w-full shadow-md justify-between items-center xl:w-1/3 sm:w-1/2  gap-4 z-[10] bg-slate-100">
                 <div class="flex flex-col text-slate-600 font-bold">
                     <p>BCA</p>
                     <div class="flex gap-4 items-center">
                         <p id="nomor" class=" text-xs sm:text-sm md:text-base">
-                            1234567890
+                            6095029951
                         </p>
                         
                          <Icon name="mdi:content-copy" class="text-sky-800 cursor-pointer text-[18px] sm:text-[20px] md:text-[24px]" 
                           id="copy" /></div>
-                    <p class=" text-xs sm:text-sm md:text-base">a/n Fauzi</p>
+                    <p class=" text-xs sm:text-sm md:text-base">A/N FAISHOL EL HAQUE</p>
                 </div>
                 <Image src={bca} alt="bca" class="w-[50px] sm:w-[60px] md:w-[80px]"/>
             </div>
-            <div class="flex py-3 px-4 w-full rounded-md shadow-md justify-between items-center gap-4 xl:w-1/3 sm:w-1/2  z-[10] bg-slate-100">
-                <Image src={qris} width={80} alt="qris"/>
-                <Image src={qr} width={80} alt="qris"/>
+            <div class="flex py-3 px-4 md:p-6 rounded-md w-full shadow-md justify-between items-center xl:w-1/3 sm:w-1/2  gap-4 z-[10] bg-slate-100">
+                <div class="flex flex-col text-slate-600 font-bold">
+                    <p>Dana</p>
+                    <div class="flex gap-4 items-center">
+                        <p id="nomor2" class="text-xs sm:text-sm md:text-base">
+                            2453190650
+                        </p>
+                        
+                         <Icon name="mdi:content-copy" class="text-sky-800 cursor-pointer text-[18px] sm:text-[20px] md:text-[24px]" 
+                          id="copy2" /></div>
+                    <p class=" text-xs sm:text-sm md:text-base">A/N MUKAROMAH</p>
+                </div>
+                <Image src={bca} alt="dana" class="w-[50px] sm:w-[60px] md:w-[80px]"/>
             </div>
         </div>
 
@@ -44,6 +53,17 @@ btn.addEventListener('click', copyToClipboard);
         range.selectNode(nomor);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
+        document.execCommand("copy");
+    } 
+
+    const btn2 = document.getElementById('copy2');
+btn2.addEventListener('click', copyToClipboards);
+  function copyToClipboards() {
+        const nomor2 = document.getElementById("nomor2");
+        let range2 = document.createRange();
+        range2.selectNode(nomor2);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range2);
         document.execCommand("copy");
     }   
 </script>

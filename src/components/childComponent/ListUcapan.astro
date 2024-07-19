@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import { getMessages } from "../../firebase/formHandler.js";
+import user from '../../img/user.png'
+
+interface Message {
+  name: string;
+  attendance: string;
+  message: string;
+}
+
+const messages = await getMessages() as Record<string, Message>;
+---
+
+<div class="flex flex-col justify-start my-10 w-full gap-5 h-full md:w-1/2 bg-slate-700/50 px-4 rounded-lg py-2 items-center overflow-y-scroll overflow-x-hidden">
+    {Object.keys(messages).length === 0 ? (
+        <p class="text-center text-slate-500">Belum ada ucapan dan doa yang masuk.</p>
+    ) : (
+        Object.entries(messages).map(([id, message]) => (
+            <div class="flex rounded-lg shadow items-center w-full gap-5 bg-white">
+                <div class="flex flex-col items-center justify-center gap-2 py-2 px-3">
+                    <Image src={user} class="w-[50px]" alt="person"/>
+                    <h3 class="text-sm md:text-base">{message.name}</h3>
+                </div>
+                <div class="flex flex-col gap-2 p-2">
+                    <h3 class={`rounded-lg text-sm md:text-base bg-slate-200 w-[80px] text-center px-2 py-1 inline font-semibold ${message.attendance === 'hadir' ? 'text-green-500' : message.attendance === 'belum pasti' ? 'text-yellow-500' : 'text-red-500'}`}>
+                        {message.attendance}
+                    </h3>
+                    <p class="text-xs sm:text-sm md:text-base">{message.message}</p>
+                </div>
+            </div>
+        ))
+    )}
+</div>

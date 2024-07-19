@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {Footer,Gallery,Gift,Heros,Location,Navigation,Profile,Story,Ucapan,UndanganAcara,Video} from '../components'
+import {Gallery,Gift,Heros,Location,Navigation,Profile,Ucapan,UndanganAcara} from '../components'
 import { Icon } from 'astro-icon/components';
 ---
 
@@ -11,14 +11,11 @@ import { Icon } from 'astro-icon/components';
 <UndanganAcara name="acara"/>
 <Location name="lokasi"/>
 <Gallery name="gallery"/>
-<Video />
-<Story name="cerita"/>
 <Gift name="gift"/>
 <Ucapan name="ucapan"/>
 <button id="sound" class="fixed bottom-20 left-5 sm:bottom-10 sm:left-10 bg-white shadow-lg p-2 rounded-full z-[100]">
 <Icon name="mdi:play" class="text-sky-800 text-[24px] md:text-[32px]"/>
 </button>
-<Footer />
 </Layout>
 <script>
 	import bgsound from '../components/sound/backsound.mp3'

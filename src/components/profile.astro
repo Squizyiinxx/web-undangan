@@ -5,13 +5,12 @@ const {name} = Astro.props
 ---
 <MyLayout>
     <div id={name} class="w-full px-10 text-center">
-        <h1 class="text-3xl text-sky-800 pt-10 font-great font-bold md:text-5xl">Mempelai</h1>
-        <p class="text-xs md:text-base mt-3 px-5 font-semibold lg:font-normal text-center md:w-1/2 mx-auto md:px-3">Maha suci Allah SWT yang telah menciptakan makhluk-Nya berpasang-pasangan.
-            Ya Allah, perkenankanlah kami merangkai kasih sayang yang Kau ciptakan di antara putra-putri kami:</p>
-            <div class="flex gap-4 w-full flex-col md:flex-row md:w-1/2 text-center mx-auto z-10 px-5 mt-20">
-                <ComponentProfile name="Fauzi" mempelai="pria" image="pria" city="Bandung"/>
-                <span class="text-sky-800 text-5xl font-great mt-8 md:mt-28">&</span>
-                <ComponentProfile name="Heni" mempelai="Perempuan" image="wanita" city="Serang" />
+        <h1 class="text-3xl my-primary-color pt-10 font-great font-bold md:text-5xl">Mempelai</h1>
+        <p class="text-xs md:text-base mt-3 px-5 font-semibold lg:font-normal text-center md:w-1/2 mx-auto md:px-3">Bismillahirrahmanirrahim <br/> Assalamu'alaikum Warahmatullahi Wabarakatuh <br/> Dengan Memohon Ridho Allah Subhanahu Wa Ta'ala <br/> Kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan putra-putri kami: </p>
+            <div class="flex gap-20 justify-center w-full flex-col md:flex-row md:w-1/2 text-center mx-auto z-10 px-5 mt-20">
+                <ComponentProfile name="Mukahromah" mempelai="Perempuan" image="wanita" city="Serang" anak="Putri Bpk. Hadiri & Ibu Jaonah" sosmed="https://www.instagram.com/mumutiwayyy/" />
+                <span class="my-primary-color text-5xl font-great mt-8 md:mt-28">&</span>
+                <ComponentProfile name="Fasiol" mempelai="pria" image="pria" city="Serang" anak="Putra Bpk. Ridwan & Ibu Sumaenah" sosmed="https://www.instagram.com/faishol.el/"/>
             </div>
         </div>
 </MyLayout>

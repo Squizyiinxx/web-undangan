@@ -1,6 +1,24 @@
 /* The integration's default injected base.css file */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap');
 
+
+.my-primary-bg{
+    background-color: #e0d1c0;
+}
+.color-hero{
+    color: #f2c492;
+}
+.my-secondary-bg{
+    background-color: #7c533e;
+}
+.my-primary-color{
+    color: #966543;
+}
+
+.my-secondary-color{
+    color: #7c533e;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,20 +1,27 @@
 ---
 import MyLayout from "../layouts/MyLayout.astro";
-const {name} = Astro.props
+import ListUcapan from "./childComponent/ListUcapan.astro";
+const { name } = Astro.props;
 ---
 
 <MyLayout>
-    <div id={name} class="w-full flex flex-col justify-center items-center py-10 px-5">
-        <h1 class="text-3xl text-sky-800 font-great font-bold md:text-5xl">Ucapan & Doa</h1>
-        <div class="flex flex-col p-8 mt-20 mb-30 gap-5 w-full md:w-1/2 bg-white rounded-md shadow-md z-[10]">
-            <h1 class="text-xl text-sky-800 font-Dancing text-center">Berikan Ucapan dan Doamu karena itu berharga bagi kami</h1>
-            <input class="p-3 text-sm md:text-base w-full rounded-md shadow-sm bg-slate-100 outline-none border-2 mt-5" type="text" name="nama" id="nama" placeholder="Masukkan Nama">
-            <select class="text-sm md:text-base p-2 bg-slate-100 outline-none border-2 w-full rounded-md shadow-sm">
-                <option value="hadir" selected>Hadir</option>
-                <option value="belum pasti">Belum pasti</option>
-                <option value="tidak bisa">tidak bisa hadir</option>
-            </select>
-            <textarea class="text-sm md:text-base p-3 w-full rounded-md shadow-sm bg-slate-100 outline-none border-2" name="ucapan" id="ucapan" cols="30" rows="10" placeholder="Masukkan Ucapan"></textarea>
-        </div>
-        </div>
+  <div id={name} class="w-full flex flex-col justify-center items-center py-10 px-5">
+    <h1 class="text-3xl my-primary-color font-great font-bold md:text-5xl">Ucapan & Doa</h1>
+    <div class="flex flex-col my-secondary-bg py-8 px-4 lg:p-8 mt-20 mb-30 gap-5 w-full md:w-1/2 rounded-md shadow-md z-[10]">
+      <h1 class="text-xl text-white font-Dancing text-center">Berikan Ucapan dan Doamu karena itu berharga bagi kami</h1>
+      <form method="post" class="flex flex-col gap-3 lg:gap-5">
+        <input class="p-3 text-sm md:text-base w-full rounded-md shadow-sm bg-slate-100 outline-none border-2 mt-5" type="text" name="nama" id="nama" placeholder="Masukkan Nama">
+        <select class="text-sm md:text-base p-2 bg-slate-100 outline-none border-2 w-full rounded-md shadow-sm" name="kehadiran">
+          <option value="hadir" selected>Hadir</option>
+          <option value="belum pasti">Belum pasti</option>
+          <option value="tidak bisa">Tidak bisa hadir</option>
+        </select>
+        <textarea class="text-sm md:text-base p-3 w-full rounded-md shadow-sm bg-slate-100 outline-none border-2" name="ucapan" id="ucapan" cols="30" rows="10" placeholder="Masukkan Ucapan"></textarea>
+        <button type="submit" class="text-sm md:text-base p-3 w-full rounded-md shadow bg-[#e0d1c0] my-primary-color font-bold focus:bg-[#dfb07b] transition duration-300">Kirim</button>
+      </form>
+    </div>
+    <ListUcapan />
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script type="module" src="/src/firebase/formHandler.js"></script>
 </MyLayout>

@@ -1,19 +1,17 @@
 ---
-import {BackgroundImage} from 'astro-imagetools/components';
+import bunga3 from '../img/bunga3.png'
+import img1 from '../img/img1.png'
 import { Hero } from '.';
+import { Image } from "astro:assets"
+
 
 ---
-<div >
-	<BackgroundImage
-	placeholder="blurred"
-	src="/src/img/img1.jpg"
-	backgroundSize="cover"
-	backgroundPosition="50% 50%"
-	
-	>
-	<span class="flex flex-col w-full h-full bg-slate-800 bg-opacity-50 relative">
-		<Hero name="home"/>
-            
-	</span>
-</BackgroundImage>
+<div class="relative">
+	<Image src={img1} alt="hero" class="absolute top-1/4 lg:top-0 left-0 lg:left-1/4 w-full md:w-1/2" />
+	 <span class="flex flex-col w-full h-full my-primary-bg bg-opacity-50">
+    <Image width={300} src={bunga3} class="absolute -top-[50px] -left-[50px]" alt="bunga3" />
+    <Image width={300} src={bunga3} class="absolute -top-[50px] rotate-90 -right-[50px]" alt="bunga3" />
+    <Hero name="home" />
+  </span>
+
 </div>

@@ -1,14 +1,13 @@
 ---
+import { Image } from "astro:assets";
+import img1 from '../img/bunga2.png'
+import img2 from '../img/bunga3.png'
 
 ---
-<div class="flex flex-col w-full py-10 justify-center items-center bg-slate-300 relative overflow-hidden
-before:absolute before:top-60 md:before:top-100 before:-left-10 before:w-[100px] md:before:w-[200px] before:h-[200px] md:before:h-[500px] before:bg-no-repeat before:bg-cover before:bg-center before:bg-[url('/src/img/asset2.png')]
-after:absolute after:-bottom-[100px] after:right-0 after:w-[100px] md:after:w-[200px] after:h-[200px] md:after:h-[500px] after:bg-no-repeat after:bg-cover after:bg-center after:bg-[url('/src/img/asset3.png')]
- pb-20">
-    <img src="/src/img/asset2.png" alt="splash" class="absolute md:hidden bottom-72 right-0 h-[200px] transform rotate-180">
-    <img src="/src/img/splash.png" alt="splash" class="absolute top-0 right-10 w-[700px] -z-6 opacity-20">
-    <img src="/src/img/splash2.png" alt="splash" class="absolute -bottom-[200px] left-10 w-[700px] -z-6 opacity-20">
-    <img src="/src/img/asset4.png" alt="bunga" class="absolute -top-14 md:-top-16 h-[200px] -right-[50px] md:-right-[120px] md:h-[300px] -z-6">
+<div class="flex flex-col w-full py-10 justify-center items-center my-primary-bg relative overflow-hidden pb-20">
+ <Image src={img1} alt="person" class="absolute top-[80px] sm:top-[120px] md:top-[230px] -left-[60px] md:-left-[150px] w-[200px] md:w-[500px] h-[200px] md:h-[500px] bg-no-repeat bg-cover bg-center" />
+ <Image src={img2} width={0} alt="person2" class="absolute top-[110px] sm:top-[130px] lg:top-[350px] -right-[20px] w-[150px] md:w-[300px] h-[150px] md:h-[300px] bg-no-repeat bg-cover bg-center rotate-90" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#7c533e" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,170.7C384,181,480,171,576,165.3C672,160,768,160,864,181.3C960,203,1056,245,1152,240C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <slot/>
 
 </div>
